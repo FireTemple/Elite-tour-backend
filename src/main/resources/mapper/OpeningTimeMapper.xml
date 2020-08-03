@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zoomride.mapper.OpeningTimeMapper">
+  <resultMap id="BaseResultMap" type="com.zoomride.entity.OpeningTime">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="mo" jdbcType="VARCHAR" property="mo" />
+    <result column="tu" jdbcType="VARCHAR" property="tu" />
+    <result column="we" jdbcType="VARCHAR" property="we" />
+    <result column="th" jdbcType="VARCHAR" property="th" />
+    <result column="fr" jdbcType="VARCHAR" property="fr" />
+    <result column="sa" jdbcType="VARCHAR" property="sa" />
+    <result column="su" jdbcType="VARCHAR" property="su" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_id" jdbcType="VARCHAR" property="createId" />
+    <result column="update_id" jdbcType="VARCHAR" property="updateId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, title, mo, tu, we, th, fr, sa, su, create_time, update_time, create_id, update_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from opening_time
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from opening_time
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zoomride.entity.OpeningTime">
+    insert into opening_time (id, title, mo, 
+      tu, we, th, fr, 
+      sa, su, create_time, 
+      update_time, create_id, update_id
+      )
+    values (#{id,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{mo,jdbcType=VARCHAR}, 
+      #{tu,jdbcType=VARCHAR}, #{we,jdbcType=VARCHAR}, #{th,jdbcType=VARCHAR}, #{fr,jdbcType=VARCHAR}, 
+      #{sa,jdbcType=VARCHAR}, #{su,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zoomride.entity.OpeningTime">
+    insert into opening_time
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="mo != null">
+        mo,
+      </if>
+      <if test="tu != null">
+        tu,
+      </if>
+      <if test="we != null">
+        we,
+      </if>
+      <if test="th != null">
+        th,
+      </if>
+      <if test="fr != null">
+        fr,
+      </if>
+      <if test="sa != null">
+        sa,
+      </if>
+      <if test="su != null">
+        su,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createId != null">
+        create_id,
+      </if>
+      <if test="updateId != null">
+        update_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="mo != null">
+        #{mo,jdbcType=VARCHAR},
+      </if>
+      <if test="tu != null">
+        #{tu,jdbcType=VARCHAR},
+      </if>
+      <if test="we != null">
+        #{we,jdbcType=VARCHAR},
+      </if>
+      <if test="th != null">
+        #{th,jdbcType=VARCHAR},
+      </if>
+      <if test="fr != null">
+        #{fr,jdbcType=VARCHAR},
+      </if>
+      <if test="sa != null">
+        #{sa,jdbcType=VARCHAR},
+      </if>
+      <if test="su != null">
+        #{su,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createId != null">
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateId != null">
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zoomride.entity.OpeningTime">
+    update opening_time
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="mo != null">
+        mo = #{mo,jdbcType=VARCHAR},
+      </if>
+      <if test="tu != null">
+        tu = #{tu,jdbcType=VARCHAR},
+      </if>
+      <if test="we != null">
+        we = #{we,jdbcType=VARCHAR},
+      </if>
+      <if test="th != null">
+        th = #{th,jdbcType=VARCHAR},
+      </if>
+      <if test="fr != null">
+        fr = #{fr,jdbcType=VARCHAR},
+      </if>
+      <if test="sa != null">
+        sa = #{sa,jdbcType=VARCHAR},
+      </if>
+      <if test="su != null">
+        su = #{su,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createId != null">
+        create_id = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateId != null">
+        update_id = #{updateId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zoomride.entity.OpeningTime">
+    update opening_time
+    set title = #{title,jdbcType=VARCHAR},
+      mo = #{mo,jdbcType=VARCHAR},
+      tu = #{tu,jdbcType=VARCHAR},
+      we = #{we,jdbcType=VARCHAR},
+      th = #{th,jdbcType=VARCHAR},
+      fr = #{fr,jdbcType=VARCHAR},
+      sa = #{sa,jdbcType=VARCHAR},
+      su = #{su,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_id = #{createId,jdbcType=VARCHAR},
+      update_id = #{updateId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
