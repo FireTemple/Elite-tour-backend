@@ -125,9 +125,5 @@
       sex = #{sex,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <select id="selectByUsername" parameterType="java.lang.String">
-    select <include refid="Base_Column_List" />
-    from admin
-    where username = #{username,jdbcType=VARCHAR}
-  </select>
+
 </mapper>

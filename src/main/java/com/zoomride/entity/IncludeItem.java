@@ -1,20 +1,13 @@
 package com.zoomride.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class IncludeItem implements Serializable {
     private String id;
 
     private String content;
 
-    private Date createTime;
-
-    private Date updateTime;
-
-    private String createId;
-
-    private String updateId;
+    private String itemId;
 
     private static final long serialVersionUID = 1L;
 
@@ -34,36 +27,12 @@ public class IncludeItem implements Serializable {
         this.content = content == null ? null : content.trim();
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public String getItemId() {
+        return itemId;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public String getCreateId() {
-        return createId;
-    }
-
-    public void setCreateId(String createId) {
-        this.createId = createId == null ? null : createId.trim();
-    }
-
-    public String getUpdateId() {
-        return updateId;
-    }
-
-    public void setUpdateId(String updateId) {
-        this.updateId = updateId == null ? null : updateId.trim();
+    public void setItemId(String itemId) {
+        this.itemId = itemId == null ? null : itemId.trim();
     }
 
     @Override
@@ -74,10 +43,7 @@ public class IncludeItem implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", content=").append(content);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", updateTime=").append(updateTime);
-        sb.append(", createId=").append(createId);
-        sb.append(", updateId=").append(updateId);
+        sb.append(", itemId=").append(itemId);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

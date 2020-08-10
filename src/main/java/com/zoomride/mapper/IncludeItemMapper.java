@@ -2,6 +2,8 @@ package com.zoomride.mapper;
 
 import com.zoomride.entity.IncludeItem;
 
+import java.util.List;
+
 public interface IncludeItemMapper {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +16,6 @@ public interface IncludeItemMapper {
     int updateByPrimaryKeySelective(IncludeItem record);
 
     int updateByPrimaryKey(IncludeItem record);
+
+    List<IncludeItem> selectByTourId(String id);
 }

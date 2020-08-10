@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zoomride.mapper.ReviewMapper">
+  <resultMap id="BaseResultMap" type="com.zoomride.entity.Review">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="item_id" jdbcType="VARCHAR" property="itemId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, description, `date`, item_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from review
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from review
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zoomride.entity.Review">
+    insert into review (id, username, description, 
+      `date`, item_id)
+    values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{date,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zoomride.entity.Review">
+    insert into review
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="date != null">
+        `date`,
+      </if>
+      <if test="itemId != null">
+        item_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="itemId != null">
+        #{itemId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zoomride.entity.Review">
+    update review
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        `date` = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="itemId != null">
+        item_id = #{itemId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zoomride.entity.Review">
+    update review
+    set username = #{username,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      `date` = #{date,jdbcType=VARCHAR},
+      item_id = #{itemId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

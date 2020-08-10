@@ -6,6 +6,5 @@ import lombok.Data;
 public class IncludeItemAddReqVO {
 
     private String content;
-    private String userId;
 
 }

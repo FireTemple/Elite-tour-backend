@@ -61,65 +61,6 @@
             <columnOverride column="sex" javaType="java.lang.String"/>
         </table>
 
-        <table tableName="big_info" domainObjectName="BigInfo"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="true">
-            <columnOverride column="item_id" javaType="java.lang.String"/>
-            <columnOverride column="name" javaType="java.lang.String"/>
-            <columnOverride column="address" javaType="java.lang.String"/>
-            <columnOverride column="price" javaType="java.lang.String"/>
-            <columnOverride column="create_time" javaType="java.util.Date"/>
-            <columnOverride column="update_time" javaType="java.util.Date"/>
-            <columnOverride column="create_id" javaType="java.lang.String"/>
-            <columnOverride column="update_id" javaType="java.lang.String"/>
-        </table>
-
-        <table tableName="bref_schedule" domainObjectName="BrifSchedule"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="true">
-            <columnOverride column="address" javaType="java.lang.String"/>
-            <columnOverride column="mo" javaType="java.lang.String"/>
-            <columnOverride column="tu" javaType="java.lang.String"/>
-            <columnOverride column="we" javaType="java.lang.String"/>
-            <columnOverride column="th" javaType="java.lang.String"/>
-            <columnOverride column="fr" javaType="java.lang.String"/>
-            <columnOverride column="sa" javaType="java.lang.String"/>
-            <columnOverride column="su" javaType="java.lang.String"/>
-        </table>
-
-        <table tableName="des" domainObjectName="Des"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="true">
-            <columnOverride column="title" javaType="java.lang.String"/>
-            <columnOverride column="title_des" javaType="java.lang.String"/>
-            <columnOverride column="include_des" javaType="java.lang.String"/>
-            <columnOverride column="create_time" javaType="java.util.Date"/>
-            <columnOverride column="update_time" javaType="java.util.Date"/>
-            <columnOverride column="create_id" javaType="java.lang.String"/>
-            <columnOverride column="update_id" javaType="java.lang.String"/>
-        </table>
-
-        <table tableName="duration_detail" domainObjectName="DurationDetail"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="true">
-            <columnOverride column="content" javaType="java.lang.String"/>
-            <columnOverride column="create_time" javaType="java.util.Date"/>
-            <columnOverride column="update_time" javaType="java.util.Date"/>
-            <columnOverride column="create_id" javaType="java.lang.String"/>
-            <columnOverride column="update_id" javaType="java.lang.String"/>
-        </table>
         <table tableName="include_item" domainObjectName="IncludeItem"
                enableCountByExample="false"
                enableUpdateByExample="false"
@@ -127,101 +68,46 @@
                enableSelectByExample="false"
                selectByExampleQueryId="true">
             <columnOverride column="content" javaType="java.lang.String"/>
-            <columnOverride column="create_time" javaType="java.util.Date"/>
-            <columnOverride column="update_time" javaType="java.util.Date"/>
-            <columnOverride column="create_id" javaType="java.lang.String"/>
-            <columnOverride column="update_id" javaType="java.lang.String"/>
+            <columnOverride column="item_id" javaType="java.lang.String"/>
         </table>
-        <table tableName="item" domainObjectName="Item"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="true">
-            <columnOverride column="type" javaType="java.lang.String"/>
-            <columnOverride column="kind_id" javaType="java.lang.String"/>
-            <columnOverride column="create_time" javaType="java.util.Date"/>
-            <columnOverride column="update_time" javaType="java.util.Date"/>
-            <columnOverride column="create_id" javaType="java.lang.String"/>
-            <columnOverride column="update_id" javaType="java.lang.String"/>
-        </table>
-        <table tableName="kind" domainObjectName="Kind"
+
+        <table tableName="tour" domainObjectName="Tour"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="true">
             <columnOverride column="name" javaType="java.lang.String"/>
-        </table>
-        <table tableName="opening_time" domainObjectName="OpeningTime"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="true">
-            <columnOverride column="mo" javaType="java.lang.String"/>
-            <columnOverride column="tu" javaType="java.lang.String"/>
-            <columnOverride column="we" javaType="java.lang.String"/>
-            <columnOverride column="th" javaType="java.lang.String"/>
-            <columnOverride column="fr" javaType="java.lang.String"/>
-            <columnOverride column="sa" javaType="java.lang.String"/>
-            <columnOverride column="su" javaType="java.lang.String"/>
-            <columnOverride column="title" javaType="java.lang.String"/>
-            <columnOverride column="create_time" javaType="java.util.Date"/>
-            <columnOverride column="update_time" javaType="java.util.Date"/>
-            <columnOverride column="create_id" javaType="java.lang.String"/>
-            <columnOverride column="update_id" javaType="java.lang.String"/>
-        </table>
-
-        <table tableName="schedule" domainObjectName="Schedule"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="true">
-            <columnOverride column="mo" javaType="java.lang.String"/>
-            <columnOverride column="tu" javaType="java.lang.String"/>
-            <columnOverride column="we" javaType="java.lang.String"/>
-            <columnOverride column="th" javaType="java.lang.String"/>
-            <columnOverride column="fr" javaType="java.lang.String"/>
-            <columnOverride column="sa" javaType="java.lang.String"/>
-            <columnOverride column="su" javaType="java.lang.String"/>
+            <columnOverride column="description" javaType="java.lang.String"/>
+            <columnOverride column="details" javaType="java.lang.String"/>
             <columnOverride column="duration" javaType="java.lang.String"/>
-            <columnOverride column="create_time" javaType="java.util.Date"/>
-            <columnOverride column="update_time" javaType="java.util.Date"/>
-            <columnOverride column="create_id" javaType="java.lang.String"/>
-            <columnOverride column="update_id" javaType="java.lang.String"/>
-        </table>
-        <table tableName="small_info" domainObjectName="SmallInfo"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="true">
-            <columnOverride column="item_id" javaType="java.lang.String"/>
-            <columnOverride column="type" javaType="java.lang.String"/>
-            <columnOverride column="imgUrl" javaType="java.lang.String"/>
-            <columnOverride column="title" javaType="java.lang.String"/>
-            <columnOverride column="des" javaType="java.lang.String"/>
+            <columnOverride column="max_duration" javaType="java.lang.String"/>
+            <columnOverride column="country" javaType="java.lang.String"/>
+            <columnOverride column="country_area" javaType="java.lang.String"/>
+            <columnOverride column="details_link" javaType="java.lang.String"/>
+            <columnOverride column="status" javaType="java.lang.String"/>
             <columnOverride column="c_price" javaType="java.lang.String"/>
             <columnOverride column="p_price" javaType="java.lang.String"/>
-            <columnOverride column="delete" javaType="java.lang.String"/>
-            <columnOverride column="create_time" javaType="java.util.Date"/>
-            <columnOverride column="update_time" javaType="java.util.Date"/>
-            <columnOverride column="create_id" javaType="java.lang.String"/>
-            <columnOverride column="update_id" javaType="java.lang.String"/>
+            <columnOverride column="type" javaType="java.lang.String"/>
+            <columnOverride column="has_accessibility" javaType="java.lang.String"/>
+            <columnOverride column="is_allowed_pet" javaType="java.lang.String"/>
+            <columnOverride column="has_audio_guide" javaType="java.lang.String"/>
+            <columnOverride column="include_description" javaType="java.lang.String"/>
+            <columnOverride column="has_tour_guide" javaType="java.lang.String"/>
         </table>
 
-        <table tableName="des_include_item" domainObjectName="DesIncludeItem"
+        <table tableName="review" domainObjectName="Review"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="true">
-            <columnOverride column="id" javaType="java.lang.String"/>
-            <columnOverride column="des_id" javaType="java.lang.String"/>
-            <columnOverride column="include_item_id" javaType="java.lang.String"/>
+            <columnOverride column="username" javaType="java.lang.String"/>
+            <columnOverride column="description" javaType="java.lang.String"/>
+            <columnOverride column="date" javaType="java.lang.String"/>
+            <columnOverride column="item_id" javaType="java.util.Date"/>
         </table>
+
 
     </context>
 
