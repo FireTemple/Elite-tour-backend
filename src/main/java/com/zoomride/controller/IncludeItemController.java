@@ -5,10 +5,7 @@ import com.zoomride.service.impl.IncludeItemServiceImpl;
 import com.zoomride.utils.DataResult;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +21,14 @@ public class IncludeItemController {
     public DataResult<List<IncludeItem>> queryIncludeItemsByTourId(@PathVariable("id")String id){
         DataResult<List<IncludeItem>>  result = DataResult.success();
         result.setData(includeItemService.queryAllByTourId(id));
+        return result;
+    }
+
+    @DeleteMapping("/includeItem/{id}")
+    @ApiOperation("delete includeItem by id")
+    public DataResult deleteIncludeItemById(@PathVariable("id")String id){
+        DataResult result = DataResult.success();
+        includeItemService.deleteById(id);
         return result;
     }
 }

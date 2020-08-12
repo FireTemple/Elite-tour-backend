@@ -4,6 +4,7 @@ import com.zoomride.entity.Tour;
 import com.zoomride.service.impl.TourServiceImpl;
 import com.zoomride.utils.DataResult;
 import com.zoomride.vo.req.TourAddReqVO;
+import com.zoomride.vo.req.TourUpdateReqVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,15 @@ public class TourController {
 
     }
 
+    @GetMapping("/acTours")
+    @ApiOperation(value = "query All active tours")
+    public DataResult queryAllActiveTour(){
+        DataResult dataResult = DataResult.success();
+
+        dataResult.setData(tourService.queryAllActive());
+        return dataResult;
+    }
+
     @GetMapping("/tour/{id}")
     @ApiOperation(value = "query tour by it's id")
     public DataResult queryTour(@PathVariable("id") String id){
@@ -52,10 +62,10 @@ public class TourController {
 
     @PutMapping("/tour")
     @ApiOperation(value = "update a tour")
-    public DataResult updateTour(@RequestBody Tour tour){
+    public DataResult updateTour(@RequestBody TourUpdateReqVO tourUpdateReqVO){
 
         DataResult result = DataResult.success();
-        tourService.updateTour(tour);
+        tourService.updateTour(tourUpdateReqVO);
         return result;
     }
 

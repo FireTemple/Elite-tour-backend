@@ -20,4 +20,6 @@ public interface TourMapper {
     List<Tour> selectAll();
 
     int deleteTour(String id);
+
+    List<Tour> selectAllActive();
 }

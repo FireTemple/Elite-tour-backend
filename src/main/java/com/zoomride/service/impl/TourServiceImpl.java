@@ -8,10 +8,13 @@ import com.zoomride.mapper.IncludeItemMapper;
 import com.zoomride.mapper.TourMapper;
 import com.zoomride.service.TourService;
 import com.zoomride.vo.req.IncludeItemAddReqVO;
+import com.zoomride.vo.req.IncludeItemUpdateReqVO;
 import com.zoomride.vo.req.TourAddReqVO;
+import com.zoomride.vo.req.TourUpdateReqVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
@@ -31,6 +34,12 @@ public class TourServiceImpl implements TourService {
     }
 
     @Override
+    public List<Tour> queryAllActive() {
+        return tourMapper.selectAllActive();
+    }
+
+    @Override
+    @Transactional
     public void addTour(TourAddReqVO tourAddReqVO) {
         Tour tour = new Tour();
 
@@ -57,11 +66,33 @@ public class TourServiceImpl implements TourService {
     }
 
     @Override
-    public void updateTour(Tour tour) {
+    @Transactional
+    public void updateTour(TourUpdateReqVO tourUpdateReqVO) {
+        Tour tour = new Tour();
+        BeanUtils.copyProperties(tourUpdateReqVO, tour);
+
+        for (IncludeItemUpdateReqVO includeItemUpdateReqVO : tourUpdateReqVO.getIncludeItems()){
+                IncludeItem includeItem = new IncludeItem();
+            if (includeItemUpdateReqVO.getId() == "" || includeItemUpdateReqVO.getId() == null){
+                includeItem.setId(UUID.randomUUID().toString());
+                includeItem.setItemId(tour.getId());
+                includeItem.setContent(includeItemUpdateReqVO.getContent());
+                int i = includeItemMapper.insertSelective(includeItem);
+                if (i != 1){
+                    throw new BusinessException(BaseResponseCode.DATABASE_ERROR_INSERT_MID_TIER);
+                }
+            }else{
+                BeanUtils.copyProperties(includeItemUpdateReqVO, includeItem);
+                int i = includeItemMapper.updateByPrimaryKeySelective(includeItem);
+                if (i != 1){
+                    throw new BusinessException(BaseResponseCode.DATABASE_ERROR_UPDATE);
+                }
+            }
+        }
 
         int i = tourMapper.updateByPrimaryKeySelective(tour);
         if (i != 1){
-            throw new BusinessException(BaseResponseCode.DATABASE_ERROR_UPDATE);
+            throw new BusinessException(BaseResponseCode.DATABASE_ERROR_INSERT);
         }
     }
 

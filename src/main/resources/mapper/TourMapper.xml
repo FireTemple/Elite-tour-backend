@@ -259,4 +259,11 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
 
+  <select id="selectAllActive" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tour
+    where status = 1
+  </select>
+
 </mapper>
