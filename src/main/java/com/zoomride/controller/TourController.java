@@ -78,5 +78,12 @@ public class TourController {
         return result;
     }
 
+    @DeleteMapping("/tour/{id}")
+    @ApiOperation(value = "wave data from data base (sensitive operation)")
+    public DataResult waveTour(@PathVariable("id")String id){
+        DataResult result = DataResult.success();
+        tourService.waveTour(id);
+        return result;
+    }
 
 }

@@ -108,4 +108,14 @@ public class TourServiceImpl implements TourService {
     public Tour queryTour(String id) {
         return tourMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public void waveTour(String id) {
+
+        int i = tourMapper.deleteByPrimaryKey(id);
+        if (i != 1){
+            throw new BusinessException(BaseResponseCode.DATABASE_ERROR_DELETE);
+        }
+
+    }
 }

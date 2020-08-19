@@ -16,5 +16,6 @@ public interface TourService {
     void deleteTour(String tourId);
     Tour queryTour(String id);
 
+    void waveTour(String id);
 
 }
