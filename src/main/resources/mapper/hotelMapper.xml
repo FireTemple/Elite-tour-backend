@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zoomride.mapper.hotelMapper">
+  <resultMap id="BaseResultMap" type="com.zoomride.entity.hotel">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="details" jdbcType="VARCHAR" property="details" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="c_price" jdbcType="VARCHAR" property="cPrice" />
+    <result column="p_price" jdbcType="VARCHAR" property="pPrice" />
+    <result column="details_link" jdbcType="VARCHAR" property="detailsLink" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="has_wifi" jdbcType="VARCHAR" property="hasWifi" />
+    <result column="has_TV" jdbcType="VARCHAR" property="hasTv" />
+    <result column="has_pool" jdbcType="VARCHAR" property="hasPool" />
+    <result column="has_fitness" jdbcType="VARCHAR" property="hasFitness" />
+    <result column="has_restaurant" jdbcType="VARCHAR" property="hasRestaurant" />
+    <result column="allow_pet" jdbcType="VARCHAR" property="allowPet" />
+    <result column="has_accessibility" jdbcType="VARCHAR" property="hasAccessibility" />
+    <result column="has_parking" jdbcType="VARCHAR" property="hasParking" />
+    <result column="has_breakFast" jdbcType="VARCHAR" property="hasBreakfast" />
+    <result column="facilities_des" jdbcType="VARCHAR" property="facilitiesDes" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, `name`, description, details, address, c_price, p_price, details_link, `status`, 
+    `type`, has_wifi, has_TV, has_pool, has_fitness, has_restaurant, allow_pet, has_accessibility, 
+    has_parking, has_breakFast, facilities_des
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hotel
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from hotel
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zoomride.entity.hotel">
+    insert into hotel (id, `name`, description, 
+      details, address, c_price, 
+      p_price, details_link, `status`, 
+      `type`, has_wifi, has_TV, 
+      has_pool, has_fitness, has_restaurant, 
+      allow_pet, has_accessibility, has_parking, 
+      has_breakFast, facilities_des)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{details,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{cPrice,jdbcType=VARCHAR}, 
+      #{pPrice,jdbcType=VARCHAR}, #{detailsLink,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{hasWifi,jdbcType=VARCHAR}, #{hasTv,jdbcType=VARCHAR}, 
+      #{hasPool,jdbcType=VARCHAR}, #{hasFitness,jdbcType=VARCHAR}, #{hasRestaurant,jdbcType=VARCHAR}, 
+      #{allowPet,jdbcType=VARCHAR}, #{hasAccessibility,jdbcType=VARCHAR}, #{hasParking,jdbcType=VARCHAR}, 
+      #{hasBreakfast,jdbcType=VARCHAR}, #{facilitiesDes,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zoomride.entity.hotel">
+    insert into hotel
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="details != null">
+        details,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="cPrice != null">
+        c_price,
+      </if>
+      <if test="pPrice != null">
+        p_price,
+      </if>
+      <if test="detailsLink != null">
+        details_link,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="hasWifi != null">
+        has_wifi,
+      </if>
+      <if test="hasTv != null">
+        has_TV,
+      </if>
+      <if test="hasPool != null">
+        has_pool,
+      </if>
+      <if test="hasFitness != null">
+        has_fitness,
+      </if>
+      <if test="hasRestaurant != null">
+        has_restaurant,
+      </if>
+      <if test="allowPet != null">
+        allow_pet,
+      </if>
+      <if test="hasAccessibility != null">
+        has_accessibility,
+      </if>
+      <if test="hasParking != null">
+        has_parking,
+      </if>
+      <if test="hasBreakfast != null">
+        has_breakFast,
+      </if>
+      <if test="facilitiesDes != null">
+        facilities_des,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="details != null">
+        #{details,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="cPrice != null">
+        #{cPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="pPrice != null">
+        #{pPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="detailsLink != null">
+        #{detailsLink,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="hasWifi != null">
+        #{hasWifi,jdbcType=VARCHAR},
+      </if>
+      <if test="hasTv != null">
+        #{hasTv,jdbcType=VARCHAR},
+      </if>
+      <if test="hasPool != null">
+        #{hasPool,jdbcType=VARCHAR},
+      </if>
+      <if test="hasFitness != null">
+        #{hasFitness,jdbcType=VARCHAR},
+      </if>
+      <if test="hasRestaurant != null">
+        #{hasRestaurant,jdbcType=VARCHAR},
+      </if>
+      <if test="allowPet != null">
+        #{allowPet,jdbcType=VARCHAR},
+      </if>
+      <if test="hasAccessibility != null">
+        #{hasAccessibility,jdbcType=VARCHAR},
+      </if>
+      <if test="hasParking != null">
+        #{hasParking,jdbcType=VARCHAR},
+      </if>
+      <if test="hasBreakfast != null">
+        #{hasBreakfast,jdbcType=VARCHAR},
+      </if>
+      <if test="facilitiesDes != null">
+        #{facilitiesDes,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zoomride.entity.hotel">
+    update hotel
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="details != null">
+        details = #{details,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="cPrice != null">
+        c_price = #{cPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="pPrice != null">
+        p_price = #{pPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="detailsLink != null">
+        details_link = #{detailsLink,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="hasWifi != null">
+        has_wifi = #{hasWifi,jdbcType=VARCHAR},
+      </if>
+      <if test="hasTv != null">
+        has_TV = #{hasTv,jdbcType=VARCHAR},
+      </if>
+      <if test="hasPool != null">
+        has_pool = #{hasPool,jdbcType=VARCHAR},
+      </if>
+      <if test="hasFitness != null">
+        has_fitness = #{hasFitness,jdbcType=VARCHAR},
+      </if>
+      <if test="hasRestaurant != null">
+        has_restaurant = #{hasRestaurant,jdbcType=VARCHAR},
+      </if>
+      <if test="allowPet != null">
+        allow_pet = #{allowPet,jdbcType=VARCHAR},
+      </if>
+      <if test="hasAccessibility != null">
+        has_accessibility = #{hasAccessibility,jdbcType=VARCHAR},
+      </if>
+      <if test="hasParking != null">
+        has_parking = #{hasParking,jdbcType=VARCHAR},
+      </if>
+      <if test="hasBreakfast != null">
+        has_breakFast = #{hasBreakfast,jdbcType=VARCHAR},
+      </if>
+      <if test="facilitiesDes != null">
+        facilities_des = #{facilitiesDes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zoomride.entity.hotel">
+    update hotel
+    set `name` = #{name,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      details = #{details,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      c_price = #{cPrice,jdbcType=VARCHAR},
+      p_price = #{pPrice,jdbcType=VARCHAR},
+      details_link = #{detailsLink,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
+      has_wifi = #{hasWifi,jdbcType=VARCHAR},
+      has_TV = #{hasTv,jdbcType=VARCHAR},
+      has_pool = #{hasPool,jdbcType=VARCHAR},
+      has_fitness = #{hasFitness,jdbcType=VARCHAR},
+      has_restaurant = #{hasRestaurant,jdbcType=VARCHAR},
+      allow_pet = #{allowPet,jdbcType=VARCHAR},
+      has_accessibility = #{hasAccessibility,jdbcType=VARCHAR},
+      has_parking = #{hasParking,jdbcType=VARCHAR},
+      has_breakFast = #{hasBreakfast,jdbcType=VARCHAR},
+      facilities_des = #{facilitiesDes,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zoomride.mapper.roomMapper">
+  <resultMap id="BaseResultMap" type="com.zoomride.entity.room">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="des" jdbcType="VARCHAR" property="des" />
+    <result column="has_wifi" jdbcType="VARCHAR" property="hasWifi" />
+    <result column="wifi_des" jdbcType="VARCHAR" property="wifiDes" />
+    <result column="has_TV" jdbcType="VARCHAR" property="hasTv" />
+    <result column="tv_des" jdbcType="VARCHAR" property="tvDes" />
+    <result column="has_safety_box" jdbcType="VARCHAR" property="hasSafetyBox" />
+    <result column="saftey_box_des" jdbcType="VARCHAR" property="safteyBoxDes" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, `type`, des, has_wifi, wifi_des, has_TV, tv_des, has_safety_box, saftey_box_des
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from room
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from room
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zoomride.entity.room">
+    insert into room (id, `type`, des, 
+      has_wifi, wifi_des, has_TV, 
+      tv_des, has_safety_box, saftey_box_des
+      )
+    values (#{id,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{des,jdbcType=VARCHAR}, 
+      #{hasWifi,jdbcType=VARCHAR}, #{wifiDes,jdbcType=VARCHAR}, #{hasTv,jdbcType=VARCHAR}, 
+      #{tvDes,jdbcType=VARCHAR}, #{hasSafetyBox,jdbcType=VARCHAR}, #{safteyBoxDes,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zoomride.entity.room">
+    insert into room
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="des != null">
+        des,
+      </if>
+      <if test="hasWifi != null">
+        has_wifi,
+      </if>
+      <if test="wifiDes != null">
+        wifi_des,
+      </if>
+      <if test="hasTv != null">
+        has_TV,
+      </if>
+      <if test="tvDes != null">
+        tv_des,
+      </if>
+      <if test="hasSafetyBox != null">
+        has_safety_box,
+      </if>
+      <if test="safteyBoxDes != null">
+        saftey_box_des,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="des != null">
+        #{des,jdbcType=VARCHAR},
+      </if>
+      <if test="hasWifi != null">
+        #{hasWifi,jdbcType=VARCHAR},
+      </if>
+      <if test="wifiDes != null">
+        #{wifiDes,jdbcType=VARCHAR},
+      </if>
+      <if test="hasTv != null">
+        #{hasTv,jdbcType=VARCHAR},
+      </if>
+      <if test="tvDes != null">
+        #{tvDes,jdbcType=VARCHAR},
+      </if>
+      <if test="hasSafetyBox != null">
+        #{hasSafetyBox,jdbcType=VARCHAR},
+      </if>
+      <if test="safteyBoxDes != null">
+        #{safteyBoxDes,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zoomride.entity.room">
+    update room
+    <set>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="des != null">
+        des = #{des,jdbcType=VARCHAR},
+      </if>
+      <if test="hasWifi != null">
+        has_wifi = #{hasWifi,jdbcType=VARCHAR},
+      </if>
+      <if test="wifiDes != null">
+        wifi_des = #{wifiDes,jdbcType=VARCHAR},
+      </if>
+      <if test="hasTv != null">
+        has_TV = #{hasTv,jdbcType=VARCHAR},
+      </if>
+      <if test="tvDes != null">
+        tv_des = #{tvDes,jdbcType=VARCHAR},
+      </if>
+      <if test="hasSafetyBox != null">
+        has_safety_box = #{hasSafetyBox,jdbcType=VARCHAR},
+      </if>
+      <if test="safteyBoxDes != null">
+        saftey_box_des = #{safteyBoxDes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zoomride.entity.room">
+    update room
+    set `type` = #{type,jdbcType=VARCHAR},
+      des = #{des,jdbcType=VARCHAR},
+      has_wifi = #{hasWifi,jdbcType=VARCHAR},
+      wifi_des = #{wifiDes,jdbcType=VARCHAR},
+      has_TV = #{hasTv,jdbcType=VARCHAR},
+      tv_des = #{tvDes,jdbcType=VARCHAR},
+      has_safety_box = #{hasSafetyBox,jdbcType=VARCHAR},
+      saftey_box_des = #{safteyBoxDes,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

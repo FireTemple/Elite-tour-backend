@@ -47,31 +47,7 @@
         </javaClientGenerator>
 
 
-        <table tableName="admin" domainObjectName="Admin"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="true">
-            <columnOverride column="username" javaType="java.lang.String"/>
-            <columnOverride column="password" javaType="java.lang.String"/>
-            <columnOverride column="first_name" javaType="java.lang.String"/>
-            <columnOverride column="email" javaType="java.lang.String"/>
-            <columnOverride column="status" javaType="java.lang.String"/>
-            <columnOverride column="sex" javaType="java.lang.String"/>
-        </table>
-
-        <table tableName="include_item" domainObjectName="IncludeItem"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="true">
-            <columnOverride column="content" javaType="java.lang.String"/>
-            <columnOverride column="item_id" javaType="java.lang.String"/>
-        </table>
-
-        <table tableName="tour" domainObjectName="Tour"
+        <table tableName="hotel" domainObjectName="hotel"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
@@ -80,32 +56,48 @@
             <columnOverride column="name" javaType="java.lang.String"/>
             <columnOverride column="description" javaType="java.lang.String"/>
             <columnOverride column="details" javaType="java.lang.String"/>
-            <columnOverride column="duration" javaType="java.lang.String"/>
-            <columnOverride column="max_duration" javaType="java.lang.String"/>
-            <columnOverride column="country" javaType="java.lang.String"/>
-            <columnOverride column="country_area" javaType="java.lang.String"/>
-            <columnOverride column="details_link" javaType="java.lang.String"/>
-            <columnOverride column="status" javaType="java.lang.String"/>
+            <columnOverride column="address" javaType="java.lang.String"/>
             <columnOverride column="c_price" javaType="java.lang.String"/>
             <columnOverride column="p_price" javaType="java.lang.String"/>
+            <columnOverride column="details_link" javaType="java.lang.String"/>
+            <columnOverride column="status" javaType="java.lang.String"/>
             <columnOverride column="type" javaType="java.lang.String"/>
+            <columnOverride column="has_wifi" javaType="java.lang.String"/>
+            <columnOverride column="has_TV" javaType="java.lang.String"/>
+            <columnOverride column="has_pool" javaType="java.lang.String"/>
+            <columnOverride column="has_fitness" javaType="java.lang.String"/>
+            <columnOverride column="has_restaurant" javaType="java.lang.String"/>
+            <columnOverride column="allow_pet" javaType="java.lang.String"/>
             <columnOverride column="has_accessibility" javaType="java.lang.String"/>
-            <columnOverride column="is_allowed_pet" javaType="java.lang.String"/>
-            <columnOverride column="has_audio_guide" javaType="java.lang.String"/>
-            <columnOverride column="include_description" javaType="java.lang.String"/>
-            <columnOverride column="has_tour_guide" javaType="java.lang.String"/>
+            <columnOverride column="has_parking" javaType="java.lang.String"/>
+            <columnOverride column="has_breakFast" javaType="java.lang.String"/>
+            <columnOverride column="facilities_des" javaType="java.lang.String"/>
         </table>
 
-        <table tableName="review" domainObjectName="Review"
+        <table tableName="facility" domainObjectName="facility"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="true">
-            <columnOverride column="username" javaType="java.lang.String"/>
-            <columnOverride column="description" javaType="java.lang.String"/>
-            <columnOverride column="date" javaType="java.lang.String"/>
-            <columnOverride column="item_id" javaType="java.util.Date"/>
+            <columnOverride column="hotel_id" javaType="java.lang.String"/>
+            <columnOverride column="des" javaType="java.lang.String"/>
+        </table>
+
+        <table tableName="room" domainObjectName="room"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="true">
+            <columnOverride column="type" javaType="java.lang.String"/>
+            <columnOverride column="des" javaType="java.lang.String"/>
+            <columnOverride column="has_wifi" javaType="java.lang.String"/>
+            <columnOverride column="wifi_des" javaType="java.lang.String"/>
+            <columnOverride column="has_TV" javaType="java.lang.String"/>
+            <columnOverride column="tv_des" javaType="java.lang.String"/>
+            <columnOverride column="has_safety_box" javaType="java.lang.String"/>
+            <columnOverride column="safety_box_des" javaType="java.lang.String"/>
         </table>
 
 
