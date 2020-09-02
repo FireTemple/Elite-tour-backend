@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@Api(tags = "tour opertion")
+@Api(tags = "tour controller")
 public class TourController {
     @Autowired
     TourServiceImpl tourService;

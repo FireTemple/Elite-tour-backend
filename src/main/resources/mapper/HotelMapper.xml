@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zoomride.mapper.hotelMapper">
-  <resultMap id="BaseResultMap" type="com.zoomride.entity.hotel">
+<mapper namespace="com.zoomride.mapper.HotelMapper">
+  <resultMap id="BaseResultMap" type="com.zoomride.entity.Hotel">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="description" jdbcType="VARCHAR" property="description" />
@@ -38,7 +38,7 @@
     delete from hotel
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.zoomride.entity.hotel">
+  <insert id="insert" parameterType="com.zoomride.entity.Hotel">
     insert into hotel (id, `name`, description, 
       details, address, c_price, 
       p_price, details_link, `status`, 
@@ -54,7 +54,7 @@
       #{allowPet,jdbcType=VARCHAR}, #{hasAccessibility,jdbcType=VARCHAR}, #{hasParking,jdbcType=VARCHAR}, 
       #{hasBreakfast,jdbcType=VARCHAR}, #{facilitiesDes,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zoomride.entity.hotel">
+  <insert id="insertSelective" parameterType="com.zoomride.entity.Hotel">
     insert into hotel
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -181,7 +181,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zoomride.entity.hotel">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zoomride.entity.Hotel">
     update hotel
     <set>
       <if test="name != null">
@@ -244,7 +244,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zoomride.entity.hotel">
+  <update id="updateByPrimaryKey" parameterType="com.zoomride.entity.Hotel">
     update hotel
     set `name` = #{name,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},
@@ -267,4 +267,24 @@
       facilities_des = #{facilitiesDes,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+  <select id="queryAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from hotel
+  </select>
+
+  <select id="queryAllActive" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from hotel
+    where status = '1'
+  </select>
+
+  <update id="deleteHotel" parameterType="java.lang.String">
+    update hotel
+    set status = '3'
+    where id = #{id, jdbcType=VARCHAR}
+  </update>
+
 </mapper>

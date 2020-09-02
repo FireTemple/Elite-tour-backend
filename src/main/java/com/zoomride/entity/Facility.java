@@ -2,7 +2,7 @@ package com.zoomride.entity;
 
 import java.io.Serializable;
 
-public class facility implements Serializable {
+public class Facility implements Serializable {
     private String id;
 
     private String hotelId;

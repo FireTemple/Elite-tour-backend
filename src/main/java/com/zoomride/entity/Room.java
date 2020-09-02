@@ -2,8 +2,10 @@ package com.zoomride.entity;
 
 import java.io.Serializable;
 
-public class room implements Serializable {
+public class Room implements Serializable {
     private String id;
+
+    private String hotelId;
 
     private String type;
 
@@ -29,6 +31,14 @@ public class room implements Serializable {
 
     public void setId(String id) {
         this.id = id == null ? null : id.trim();
+    }
+
+    public String getHotelId() {
+        return hotelId;
+    }
+
+    public void setHotelId(String hotelId) {
+        this.hotelId = hotelId == null ? null : hotelId.trim();
     }
 
     public String getType() {
@@ -102,6 +112,7 @@ public class room implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
+        sb.append(", hotelId=").append(hotelId);
         sb.append(", type=").append(type);
         sb.append(", des=").append(des);
         sb.append(", hasWifi=").append(hasWifi);

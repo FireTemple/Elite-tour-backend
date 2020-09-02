@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zoomride.mapper.facilityMapper">
-  <resultMap id="BaseResultMap" type="com.zoomride.entity.facility">
+<mapper namespace="com.zoomride.mapper.FacilityMapper">
+  <resultMap id="BaseResultMap" type="com.zoomride.entity.Facility">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="hotel_id" jdbcType="VARCHAR" property="hotelId" />
     <result column="des" jdbcType="VARCHAR" property="des" />
@@ -19,13 +19,13 @@
     delete from facility
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.zoomride.entity.facility">
+  <insert id="insert" parameterType="com.zoomride.entity.Facility">
     insert into facility (id, hotel_id, des
       )
     values (#{id,jdbcType=VARCHAR}, #{hotelId,jdbcType=VARCHAR}, #{des,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.zoomride.entity.facility">
+  <insert id="insertSelective" parameterType="com.zoomride.entity.Facility">
     insert into facility
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zoomride.entity.facility">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zoomride.entity.Facility">
     update facility
     <set>
       <if test="hotelId != null">
@@ -62,7 +62,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zoomride.entity.facility">
+  <update id="updateByPrimaryKey" parameterType="com.zoomride.entity.Facility">
     update facility
     set hotel_id = #{hotelId,jdbcType=VARCHAR},
       des = #{des,jdbcType=VARCHAR}
