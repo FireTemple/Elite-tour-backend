@@ -15,7 +15,7 @@ public class Room implements Serializable {
 
     private String wifiDes;
 
-    private String hasTv;
+    private String hasTV;
 
     private String tvDes;
 
@@ -73,12 +73,12 @@ public class Room implements Serializable {
         this.wifiDes = wifiDes == null ? null : wifiDes.trim();
     }
 
-    public String getHasTv() {
-        return hasTv;
+    public String getHasTV() {
+        return hasTV;
     }
 
-    public void setHasTv(String hasTv) {
-        this.hasTv = hasTv == null ? null : hasTv.trim();
+    public void setHasTV(String hasTV) {
+        this.hasTV = hasTV;
     }
 
     public String getTvDes() {
@@ -117,7 +117,7 @@ public class Room implements Serializable {
         sb.append(", des=").append(des);
         sb.append(", hasWifi=").append(hasWifi);
         sb.append(", wifiDes=").append(wifiDes);
-        sb.append(", hasTv=").append(hasTv);
+        sb.append(", hasTV=").append(hasTV);
         sb.append(", tvDes=").append(tvDes);
         sb.append(", hasSafetyBox=").append(hasSafetyBox);
         sb.append(", safteyBoxDes=").append(safteyBoxDes);

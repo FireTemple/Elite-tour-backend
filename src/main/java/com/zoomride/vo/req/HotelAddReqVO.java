@@ -27,7 +27,7 @@ public class HotelAddReqVO {
 
     private String hasWifi;
 
-    private String hasTv;
+    private String hasTV;
 
     private String hasPool;
 

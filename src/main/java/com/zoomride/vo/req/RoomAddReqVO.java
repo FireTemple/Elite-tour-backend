@@ -13,12 +13,13 @@ public class RoomAddReqVO {
 
     private String wifiDes;
 
-    private String hasTv;
+    private String hasTV;
 
     private String tvDes;
 
     private String hasSafetyBox;
 
-    private String safteyBoxDes;
+    private String safetyBoxDes;
+
 
 }

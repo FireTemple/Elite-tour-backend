@@ -44,6 +44,7 @@ public class HotelServiceImpl implements HotelService {
     @Transactional
     public void addHotel(HotelAddReqVO hotelAddReqVO) {
 
+        System.out.println(hotelAddReqVO.toString());
 
         Hotel hotel = new Hotel();
 

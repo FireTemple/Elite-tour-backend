@@ -25,7 +25,7 @@ public class Hotel implements Serializable {
 
     private String hasWifi;
 
-    private String hasTv;
+    private String hasTV;
 
     private String hasPool;
 
@@ -133,12 +133,12 @@ public class Hotel implements Serializable {
         this.hasWifi = hasWifi == null ? null : hasWifi.trim();
     }
 
-    public String getHasTv() {
-        return hasTv;
+    public String getHasTV() {
+        return hasTV;
     }
 
-    public void setHasTv(String hasTv) {
-        this.hasTv = hasTv == null ? null : hasTv.trim();
+    public void setHasTV(String hasTV) {
+        this.hasTV = hasTV;
     }
 
     public String getHasPool() {
@@ -222,7 +222,7 @@ public class Hotel implements Serializable {
         sb.append(", status=").append(status);
         sb.append(", type=").append(type);
         sb.append(", hasWifi=").append(hasWifi);
-        sb.append(", hasTv=").append(hasTv);
+        sb.append(", hasTV=").append(hasTV);
         sb.append(", hasPool=").append(hasPool);
         sb.append(", hasFitness=").append(hasFitness);
         sb.append(", hasRestaurant=").append(hasRestaurant);

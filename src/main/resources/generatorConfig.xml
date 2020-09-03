@@ -70,7 +70,7 @@
 <!--            <columnOverride column="allow_pet" javaType="java.lang.String"/>-->
 <!--            <columnOverride column="has_accessibility" javaType="java.lang.String"/>-->
 <!--            <columnOverride column="has_parking" javaType="java.lang.String"/>-->
-<!--            <columnOverride column="has_breakFast" javaType="java.lang.String"/>-->
+<!--            <columnOverride column="has_breakfast" javaType="java.lang.String"/>-->
 <!--            <columnOverride column="facilities_des" javaType="java.lang.String"/>-->
 <!--        </table>-->
 

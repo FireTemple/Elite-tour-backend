@@ -15,7 +15,7 @@ public class RoomUpdateReqVO {
 
     private String wifiDes;
 
-    private String hasTv;
+    private String hasTV;
 
     private String tvDes;
 

@@ -8,7 +8,7 @@
     <result column="des" jdbcType="VARCHAR" property="des" />
     <result column="has_wifi" jdbcType="VARCHAR" property="hasWifi" />
     <result column="wifi_des" jdbcType="VARCHAR" property="wifiDes" />
-    <result column="has_TV" jdbcType="VARCHAR" property="hasTv" />
+    <result column="has_TV" jdbcType="VARCHAR" property="hasTV" />
     <result column="tv_des" jdbcType="VARCHAR" property="tvDes" />
     <result column="has_safety_box" jdbcType="VARCHAR" property="hasSafetyBox" />
     <result column="saftey_box_des" jdbcType="VARCHAR" property="safteyBoxDes" />
@@ -33,7 +33,7 @@
       saftey_box_des)
     values (#{id,jdbcType=VARCHAR}, #{hotelId,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
       #{des,jdbcType=VARCHAR}, #{hasWifi,jdbcType=VARCHAR}, #{wifiDes,jdbcType=VARCHAR}, 
-      #{hasTv,jdbcType=VARCHAR}, #{tvDes,jdbcType=VARCHAR}, #{hasSafetyBox,jdbcType=VARCHAR}, 
+      #{hasTV,jdbcType=VARCHAR}, #{tvDes,jdbcType=VARCHAR}, #{hasSafetyBox,jdbcType=VARCHAR},
       #{safteyBoxDes,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.zoomride.entity.Room">
@@ -57,7 +57,7 @@
       <if test="wifiDes != null">
         wifi_des,
       </if>
-      <if test="hasTv != null">
+      <if test="hasTV != null">
         has_TV,
       </if>
       <if test="tvDes != null">
@@ -89,8 +89,8 @@
       <if test="wifiDes != null">
         #{wifiDes,jdbcType=VARCHAR},
       </if>
-      <if test="hasTv != null">
-        #{hasTv,jdbcType=VARCHAR},
+      <if test="hasTV != null">
+        #{hasTV,jdbcType=VARCHAR},
       </if>
       <if test="tvDes != null">
         #{tvDes,jdbcType=VARCHAR},
@@ -121,8 +121,8 @@
       <if test="wifiDes != null">
         wifi_des = #{wifiDes,jdbcType=VARCHAR},
       </if>
-      <if test="hasTv != null">
-        has_TV = #{hasTv,jdbcType=VARCHAR},
+      <if test="hasTV != null">
+        has_TV = #{hasTV,jdbcType=VARCHAR},
       </if>
       <if test="tvDes != null">
         tv_des = #{tvDes,jdbcType=VARCHAR},
@@ -143,7 +143,7 @@
       des = #{des,jdbcType=VARCHAR},
       has_wifi = #{hasWifi,jdbcType=VARCHAR},
       wifi_des = #{wifiDes,jdbcType=VARCHAR},
-      has_TV = #{hasTv,jdbcType=VARCHAR},
+      has_TV = #{hasTV,jdbcType=VARCHAR},
       tv_des = #{tvDes,jdbcType=VARCHAR},
       has_safety_box = #{hasSafetyBox,jdbcType=VARCHAR},
       saftey_box_des = #{safteyBoxDes,jdbcType=VARCHAR}

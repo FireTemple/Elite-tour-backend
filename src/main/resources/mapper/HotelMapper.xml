@@ -13,20 +13,20 @@
     <result column="status" jdbcType="VARCHAR" property="status" />
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="has_wifi" jdbcType="VARCHAR" property="hasWifi" />
-    <result column="has_TV" jdbcType="VARCHAR" property="hasTv" />
+    <result column="has_TV" jdbcType="VARCHAR" property="hasTV" />
     <result column="has_pool" jdbcType="VARCHAR" property="hasPool" />
     <result column="has_fitness" jdbcType="VARCHAR" property="hasFitness" />
     <result column="has_restaurant" jdbcType="VARCHAR" property="hasRestaurant" />
     <result column="allow_pet" jdbcType="VARCHAR" property="allowPet" />
     <result column="has_accessibility" jdbcType="VARCHAR" property="hasAccessibility" />
     <result column="has_parking" jdbcType="VARCHAR" property="hasParking" />
-    <result column="has_breakFast" jdbcType="VARCHAR" property="hasBreakfast" />
+    <result column="has_breakfast" jdbcType="VARCHAR" property="hasBreakfast" />
     <result column="facilities_des" jdbcType="VARCHAR" property="facilitiesDes" />
   </resultMap>
   <sql id="Base_Column_List">
     id, `name`, description, details, address, c_price, p_price, details_link, `status`, 
     `type`, has_wifi, has_TV, has_pool, has_fitness, has_restaurant, allow_pet, has_accessibility, 
-    has_parking, has_breakFast, facilities_des
+    has_parking, has_breakfast, facilities_des
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -45,11 +45,11 @@
       `type`, has_wifi, has_TV, 
       has_pool, has_fitness, has_restaurant, 
       allow_pet, has_accessibility, has_parking, 
-      has_breakFast, facilities_des)
+      has_breakfast, facilities_des)
     values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
       #{details,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{cPrice,jdbcType=VARCHAR}, 
       #{pPrice,jdbcType=VARCHAR}, #{detailsLink,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
-      #{type,jdbcType=VARCHAR}, #{hasWifi,jdbcType=VARCHAR}, #{hasTv,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{hasWifi,jdbcType=VARCHAR}, #{hasTV,jdbcType=VARCHAR},
       #{hasPool,jdbcType=VARCHAR}, #{hasFitness,jdbcType=VARCHAR}, #{hasRestaurant,jdbcType=VARCHAR}, 
       #{allowPet,jdbcType=VARCHAR}, #{hasAccessibility,jdbcType=VARCHAR}, #{hasParking,jdbcType=VARCHAR}, 
       #{hasBreakfast,jdbcType=VARCHAR}, #{facilitiesDes,jdbcType=VARCHAR})
@@ -90,7 +90,7 @@
       <if test="hasWifi != null">
         has_wifi,
       </if>
-      <if test="hasTv != null">
+      <if test="hasTV != null">
         has_TV,
       </if>
       <if test="hasPool != null">
@@ -112,7 +112,7 @@
         has_parking,
       </if>
       <if test="hasBreakfast != null">
-        has_breakFast,
+        has_breakfast,
       </if>
       <if test="facilitiesDes != null">
         facilities_des,
@@ -152,8 +152,8 @@
       <if test="hasWifi != null">
         #{hasWifi,jdbcType=VARCHAR},
       </if>
-      <if test="hasTv != null">
-        #{hasTv,jdbcType=VARCHAR},
+      <if test="hasTV != null">
+        #{hasTV,jdbcType=VARCHAR},
       </if>
       <if test="hasPool != null">
         #{hasPool,jdbcType=VARCHAR},
@@ -214,8 +214,8 @@
       <if test="hasWifi != null">
         has_wifi = #{hasWifi,jdbcType=VARCHAR},
       </if>
-      <if test="hasTv != null">
-        has_TV = #{hasTv,jdbcType=VARCHAR},
+      <if test="hasTV != null">
+        has_TV = #{hasTV,jdbcType=VARCHAR},
       </if>
       <if test="hasPool != null">
         has_pool = #{hasPool,jdbcType=VARCHAR},
@@ -236,7 +236,7 @@
         has_parking = #{hasParking,jdbcType=VARCHAR},
       </if>
       <if test="hasBreakfast != null">
-        has_breakFast = #{hasBreakfast,jdbcType=VARCHAR},
+        has_breakfast = #{hasBreakfast,jdbcType=VARCHAR},
       </if>
       <if test="facilitiesDes != null">
         facilities_des = #{facilitiesDes,jdbcType=VARCHAR},
@@ -256,14 +256,14 @@
       `status` = #{status,jdbcType=VARCHAR},
       `type` = #{type,jdbcType=VARCHAR},
       has_wifi = #{hasWifi,jdbcType=VARCHAR},
-      has_TV = #{hasTv,jdbcType=VARCHAR},
+      has_TV = #{hasTV,jdbcType=VARCHAR},
       has_pool = #{hasPool,jdbcType=VARCHAR},
       has_fitness = #{hasFitness,jdbcType=VARCHAR},
       has_restaurant = #{hasRestaurant,jdbcType=VARCHAR},
       allow_pet = #{allowPet,jdbcType=VARCHAR},
       has_accessibility = #{hasAccessibility,jdbcType=VARCHAR},
       has_parking = #{hasParking,jdbcType=VARCHAR},
-      has_breakFast = #{hasBreakfast,jdbcType=VARCHAR},
+      has_breakfast = #{hasBreakfast,jdbcType=VARCHAR},
       facilities_des = #{facilitiesDes,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
