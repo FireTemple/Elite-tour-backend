@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api")
-@Api(tags = "upload file api" )
+@Api(tags = "upload file controller" )
 public class FileController {
 
     @PostMapping("/file")

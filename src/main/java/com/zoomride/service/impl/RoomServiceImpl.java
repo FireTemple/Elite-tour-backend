@@ -32,11 +32,4 @@ public class RoomServiceImpl implements RoomService {
 
     }
 
-    @Override
-    public void updateByRecord(Room room) {
-        int i = roomMapper.updateByPrimaryKey(room);
-        if (i != 1){
-            throw new BusinessException(BaseResponseCode.DATABASE_ERROR_UPDATE);
-        }
-    }
 }

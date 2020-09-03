@@ -109,7 +109,29 @@ public class HotelServiceImpl implements HotelService {
             }
         }
 
-        int i = hotelMapper.insertSelective(hotel);
+        for (FacilityUpdateReqVO facilityUpdateReqVO: hotelUpdateReqVO.getFacilities()){
+            Facility facility = new Facility();
+            BeanUtils.copyProperties(facilityUpdateReqVO, facility);
+            if (facilityUpdateReqVO.getId() == "" || facilityUpdateReqVO.getId() == null){
+
+                facility.setId(UUID.randomUUID().toString());
+                facility.setHotelId(hotel.getId());
+                facility.setDes(facilityUpdateReqVO.getDes());
+                int i = facilityMapper.insertSelective(facility);
+                if (i != 1){
+                    throw new BusinessException(BaseResponseCode.DATABASE_ERROR_INSERT);
+                }
+            }else {
+                int i = facilityMapper.updateByPrimaryKeySelective(facility);
+                if (i != 1){
+                    throw new BusinessException(BaseResponseCode.DATABASE_ERROR_UPDATE);
+                }
+            }
+
+        }
+
+        int i = hotelMapper.updateByPrimaryKeySelective(hotel);
+
         if (i != 1){
             throw new BusinessException(BaseResponseCode.DATABASE_ERROR_INSERT);
         }
