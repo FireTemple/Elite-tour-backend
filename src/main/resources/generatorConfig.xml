@@ -84,24 +84,61 @@
 <!--            <columnOverride column="des" javaType="java.lang.String"/>-->
 <!--        </table>-->
 
-        <table tableName="room" domainObjectName="Room"
+        <table tableName="res" domainObjectName="Res"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="true">
-            <columnOverride column="type" javaType="java.lang.String"/>
-            <columnOverride column="hotel_id" javaType="java.lang.String"/>
+            <columnOverride column="name" javaType="java.lang.String"/>
             <columnOverride column="des" javaType="java.lang.String"/>
-            <columnOverride column="has_wifi" javaType="java.lang.String"/>
-            <columnOverride column="wifi_des" javaType="java.lang.String"/>
-            <columnOverride column="has_TV" javaType="java.lang.String"/>
-            <columnOverride column="tv_des" javaType="java.lang.String"/>
-            <columnOverride column="has_safety_box" javaType="java.lang.String"/>
-            <columnOverride column="safety_box_des" javaType="java.lang.String"/>
+            <columnOverride column="details" javaType="java.lang.String"/>
+            <columnOverride column="kind" javaType="java.lang.String"/>
+            <columnOverride column="type" javaType="java.lang.String"/>
+            <columnOverride column="address" javaType="java.lang.String"/>
+            <columnOverride column="c_price" javaType="java.lang.String"/>
+            <columnOverride column="p_price" javaType="java.lang.String"/>
+            <columnOverride column="detail_link" javaType="java.lang.String"/>
+            <columnOverride column="status" javaType="java.lang.String"/>
+            <columnOverride column="menu_des" javaType="java.lang.String"/>
+            <columnOverride column="has_disabled" javaType="java.lang.String"/>
+            <columnOverride column="no_smoking" javaType="java.lang.String"/>
+            <columnOverride column="has_parking" javaType="java.lang.String"/>
+            <columnOverride column="has_transport" javaType="java.lang.String"/>
+            <columnOverride column="allow_pet" javaType="java.lang.String"/>
+            <columnOverride column="has_accessibility" javaType="java.lang.String"/>
+            <columnOverride column="disabled_des" javaType="java.lang.String"/>
+            <columnOverride column="no_smoking_des" javaType="java.lang.String"/>
+            <columnOverride column="parking_des" javaType="java.lang.String"/>
+            <columnOverride column="transport_des" javaType="java.lang.String"/>
         </table>
 
+        <table tableName="menu" domainObjectName="Menu"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="true">
+            <columnOverride column="res_id" javaType="java.lang.String"/>
+            <columnOverride column="des" javaType="java.lang.String"/>
+        </table>
 
+        <table tableName="opening_time" domainObjectName="OpeningTime"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="true">
+            <columnOverride column="res_id" javaType="java.lang.String"/>
+            <columnOverride column="title" javaType="java.lang.String"/>
+            <columnOverride column="mo" javaType="java.lang.String"/>
+            <columnOverride column="tu" javaType="java.lang.String"/>
+            <columnOverride column="we" javaType="java.lang.String"/>
+            <columnOverride column="th" javaType="java.lang.String"/>
+            <columnOverride column="fri" javaType="java.lang.String"/>
+            <columnOverride column="sa" javaType="java.lang.String"/>
+            <columnOverride column="su" javaType="java.lang.String"/>
+        </table>
     </context>
 
 </generatorConfiguration>
