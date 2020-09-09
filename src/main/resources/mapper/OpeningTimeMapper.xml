@@ -147,4 +147,11 @@
       su = #{su,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+  <select id="queryByResId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from opening_time
+    where res_id = #{id,jdbcType=VARCHAR}
+  </select>
 </mapper>

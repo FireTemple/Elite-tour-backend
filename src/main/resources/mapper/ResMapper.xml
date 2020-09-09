@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.zoomride.entity.Res">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="des" jdbcType="VARCHAR" property="des" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="details" jdbcType="VARCHAR" property="details" />
     <result column="kind" jdbcType="VARCHAR" property="kind" />
     <result column="type" jdbcType="VARCHAR" property="type" />
@@ -26,7 +26,7 @@
     <result column="transport_des" jdbcType="VARCHAR" property="transportDes" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, `name`, des, details, kind, `type`, address, c_price, p_price, detail_link, `status`, 
+    id, `name`, description, details, kind, `type`, address, c_price, p_price, detail_link, `status`,
     menu_des, has_disabled, no_smoking, has_parking, has_transport, allow_pet, has_accessibility, 
     disabled_des, no_smoking_des, parking_des, transport_des
   </sql>
@@ -41,7 +41,7 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.zoomride.entity.Res">
-    insert into res (id, `name`, des, 
+    insert into res (id, `name`, description,
       details, kind, `type`, 
       address, c_price, p_price, 
       detail_link, `status`, menu_des, 
@@ -49,7 +49,7 @@
       has_transport, allow_pet, has_accessibility, 
       disabled_des, no_smoking_des, parking_des, 
       transport_des)
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{des,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
       #{details,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
       #{address,jdbcType=VARCHAR}, #{cPrice,jdbcType=VARCHAR}, #{pPrice,jdbcType=VARCHAR}, 
       #{detailLink,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{menuDes,jdbcType=VARCHAR}, 
@@ -67,8 +67,8 @@
       <if test="name != null">
         `name`,
       </if>
-      <if test="des != null">
-        des,
+      <if test="description != null">
+        description,
       </if>
       <if test="details != null">
         details,
@@ -135,8 +135,8 @@
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="des != null">
-        #{des,jdbcType=VARCHAR},
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
       </if>
       <if test="details != null">
         #{details,jdbcType=VARCHAR},
@@ -203,8 +203,8 @@
       <if test="name != null">
         `name` = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="des != null">
-        des = #{des,jdbcType=VARCHAR},
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
       </if>
       <if test="details != null">
         details = #{details,jdbcType=VARCHAR},
@@ -269,7 +269,7 @@
   <update id="updateByPrimaryKey" parameterType="com.zoomride.entity.Res">
     update res
     set `name` = #{name,jdbcType=VARCHAR},
-      des = #{des,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
       details = #{details,jdbcType=VARCHAR},
       kind = #{kind,jdbcType=VARCHAR},
       `type` = #{type,jdbcType=VARCHAR},

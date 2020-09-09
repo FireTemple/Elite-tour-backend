@@ -9,7 +9,7 @@ public class RoomUpdateReqVO {
 
     private String type;
 
-    private String des;
+    private String description;
 
     private String hasWifi;
 

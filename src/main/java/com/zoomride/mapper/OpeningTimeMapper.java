@@ -2,6 +2,8 @@ package com.zoomride.mapper;
 
 import com.zoomride.entity.OpeningTime;
 
+import java.util.List;
+
 public interface OpeningTimeMapper {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +16,7 @@ public interface OpeningTimeMapper {
     int updateByPrimaryKeySelective(OpeningTime record);
 
     int updateByPrimaryKey(OpeningTime record);
+
+    List<OpeningTime> queryByResId(String id);
+
 }

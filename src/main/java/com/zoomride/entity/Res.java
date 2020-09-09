@@ -7,7 +7,7 @@ public class Res implements Serializable {
 
     private String name;
 
-    private String des;
+    private String description;
 
     private String details;
 
@@ -65,12 +65,13 @@ public class Res implements Serializable {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getDes() {
-        return des;
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setDes(String des) {
-        this.des = des == null ? null : des.trim();
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getDetails() {
@@ -233,7 +234,7 @@ public class Res implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", name=").append(name);
-        sb.append(", des=").append(des);
+        sb.append(", description=").append(description);
         sb.append(", details=").append(details);
         sb.append(", kind=").append(kind);
         sb.append(", type=").append(type);
