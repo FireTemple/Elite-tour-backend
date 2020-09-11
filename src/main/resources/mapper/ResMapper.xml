@@ -306,8 +306,8 @@
   </select>
 
   <update id="deleteById" parameterType="java.lang.String">
-    update
-    set status = '3'
+    update res
+    set `status` = '3'
     where id = #{id, jdbcType=VARCHAR}
   </update>
 </mapper>
