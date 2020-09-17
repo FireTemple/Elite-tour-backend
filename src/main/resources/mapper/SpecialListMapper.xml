@@ -6,6 +6,12 @@
         <result column="type" jdbcType="VARCHAR" property="type"/>
         <result column="item_id" jdbcType="VARCHAR" property="itemId"/>
     </resultMap>
+
+    <resultMap id="specialTours" type="com.zoomride.vo.resp.ClassifiedToursQueryRespVO">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="item_id" jdbcType="VARCHAR" property="itemId"/>
+    </resultMap>
     <sql id="Base_Column_List">
     id, `type`, item_id
   </sql>
@@ -69,8 +75,8 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
 
-    <select id="selectClassifiedTours" parameterType="java.lang.String" resultType="com.zoomride.vo.resp.ClassifiedToursQueryRespVO">
-    select t.id,t.name,sl.id from tour as t
+    <select id="selectClassifiedTours" parameterType="java.lang.String" resultMap="specialTours">
+    select t.id as item_id,t.name,sl.id from tour as t
     left join special_list as sl
     on t.id = sl.item_id
     where t.status = '1' and sl.type = #{type, jdbcType=VARCHAR};

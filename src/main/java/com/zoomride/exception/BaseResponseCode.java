@@ -9,6 +9,8 @@ public enum  BaseResponseCode implements ResponseCodeInterface {
     DATABASE_ERROR_UPDATE(300002,"Update error"),
     DATABASE_ERROR_DELETE(300003,"Delete error"),
     DATABASE_ERROR_INSERT_MID_TIER(300004,"Middle Table Insert Error"),
+    LOGIN_ERROR_USER_NOT_EXIST(400001,"username don't exist"),
+    LOGIN_ERROR_PASSWORD_NOT_MATCH(400001, "password dose not match."),
             ;
 
     private final int code;

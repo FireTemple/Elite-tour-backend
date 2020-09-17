@@ -126,4 +126,10 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
 
+
+  <select id="isUserExist" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from
+    admin
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
 </mapper>

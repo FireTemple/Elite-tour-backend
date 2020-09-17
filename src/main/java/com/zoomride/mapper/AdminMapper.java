@@ -14,4 +14,7 @@ public interface AdminMapper {
     int updateByPrimaryKeySelective(Admin record);
 
     int updateByPrimaryKey(Admin record);
+
+    Admin isUserExist(String username);
+
 }
