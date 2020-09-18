@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zoomride.mapper.BookingMapper">
+  <resultMap id="BaseResultMap" type="com.zoomride.entity.Booking">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="booking_date" jdbcType="VARCHAR" property="bookingDate" />
+    <result column="booking_time" jdbcType="VARCHAR" property="bookingTime" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="item_id" jdbcType="VARCHAR" property="itemId" />
+    <result column="price" jdbcType="VARCHAR" property="price" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, booking_date, booking_time, `name`, item_id, price, `type`, email, phone, create_time, 
+    `status`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from booking
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from booking
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zoomride.entity.Booking">
+    insert into booking (id, booking_date, booking_time, 
+      `name`, item_id, price, 
+      `type`, email, phone, 
+      create_time, `status`)
+    values (#{id,jdbcType=VARCHAR}, #{bookingDate,jdbcType=VARCHAR}, #{bookingTime,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{price,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zoomride.entity.Booking">
+    insert into booking
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="bookingDate != null">
+        booking_date,
+      </if>
+      <if test="bookingTime != null">
+        booking_time,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="itemId != null">
+        item_id,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="bookingDate != null">
+        #{bookingDate,jdbcType=VARCHAR},
+      </if>
+      <if test="bookingTime != null">
+        #{bookingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="itemId != null">
+        #{itemId,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zoomride.entity.Booking">
+    update booking
+    <set>
+      <if test="bookingDate != null">
+        booking_date = #{bookingDate,jdbcType=VARCHAR},
+      </if>
+      <if test="bookingTime != null">
+        booking_time = #{bookingTime,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="itemId != null">
+        item_id = #{itemId,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zoomride.entity.Booking">
+    update booking
+    set booking_date = #{bookingDate,jdbcType=VARCHAR},
+      booking_time = #{bookingTime,jdbcType=VARCHAR},
+      `name` = #{name,jdbcType=VARCHAR},
+      item_id = #{itemId,jdbcType=VARCHAR},
+      price = #{price,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <update id="changeStatus" parameterType="java.lang.String">
+    update booking
+    set status = #{status, jdbcType=VARCHAR},
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <select id="queryAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from booking
+  </select>
+
+</mapper>

@@ -43,4 +43,20 @@ public class TourUpdateReqVO {
     private String includeDescription;
 
     private List<IncludeItemUpdateReqVO> includeItems;
+
+    public String getcPrice() {
+        return cPrice;
+    }
+
+    public void setcPrice(String cPrice) {
+        this.cPrice = cPrice;
+    }
+
+    public String getpPrice() {
+        return pPrice;
+    }
+
+    public void setpPrice(String pPrice) {
+        this.pPrice = pPrice;
+    }
 }

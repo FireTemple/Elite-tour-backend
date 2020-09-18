@@ -49,14 +49,22 @@
 
 
 
-        <table tableName="special_list" domainObjectName="SpecialList"
+        <table tableName="booking" domainObjectName="Booking"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="true">
-            <columnOverride column="type" javaType="java.lang.String"/>
+            <columnOverride column="booking_date" javaType="java.lang.String"/>
+            <columnOverride column="booking_time" javaType="java.lang.String"/>
+            <columnOverride column="name" javaType="java.lang.String"/>
             <columnOverride column="item_id" javaType="java.lang.String"/>
+            <columnOverride column="price" javaType="java.lang.String"/>
+            <columnOverride column="type" javaType="java.lang.String"/>
+            <columnOverride column="email" javaType="java.lang.String"/>
+            <columnOverride column="phone" javaType="java.lang.String"/>
+            <columnOverride column="create_time" javaType="java.lang.String"/>
+            <columnOverride column="status" javaType="java.lang.String"/>
         </table>
 
 
