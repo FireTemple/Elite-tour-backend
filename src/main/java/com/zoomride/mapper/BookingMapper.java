@@ -20,4 +20,6 @@ public interface BookingMapper {
     int changeStatus(String id,String status);
 
     List<Booking> queryAll();
+
+
 }

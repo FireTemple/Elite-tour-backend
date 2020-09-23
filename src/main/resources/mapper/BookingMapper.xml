@@ -164,7 +164,7 @@
 
   <update id="changeStatus" parameterType="java.lang.String">
     update booking
-    set status = #{status, jdbcType=VARCHAR},
+    set status = #{status, jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 

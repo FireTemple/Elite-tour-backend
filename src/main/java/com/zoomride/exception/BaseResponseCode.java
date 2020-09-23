@@ -5,6 +5,7 @@ public enum  BaseResponseCode implements ResponseCodeInterface {
     SUCCESS(0, "Operation success"),
     SYSTEM_BUSY(100000,"System error,pleases try later"),
     DATA_ERROR(200000,"Input data error"),
+    DATA_ERROR_TOKEN_MISSING(200001, "Login Token Missing"),
     DATABASE_ERROR_INSERT(300001,"Insert error"),
     DATABASE_ERROR_UPDATE(300002,"Update error"),
     DATABASE_ERROR_DELETE(300003,"Delete error"),

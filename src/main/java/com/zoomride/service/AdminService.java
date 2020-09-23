@@ -1,10 +1,12 @@
 package com.zoomride.service;
 
 
-import com.zoomride.entity.Admin;
 import com.zoomride.vo.req.LoginReqVO;
+import com.zoomride.vo.resp.LoginRespVO;
 
 public interface AdminService {
 
-    Admin Login(LoginReqVO loginReqVO);
+    LoginRespVO Login(LoginReqVO loginReqVO);
+
+    void logout(String accessToken, String refreshToken);
 }

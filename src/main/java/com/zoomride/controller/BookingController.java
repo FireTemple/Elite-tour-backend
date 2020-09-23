@@ -45,6 +45,7 @@ public class BookingController {
     public DataResult changeStatus(@PathVariable("id")String id, String status){
 
         DataResult result = DataResult.success();
+        System.out.println(status);
         bookingService.canceledOrder(id, status);
         return result;
     }

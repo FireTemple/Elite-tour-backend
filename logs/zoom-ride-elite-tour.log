@@ -1,0 +1,60 @@
+2020-09-23 14:33:20.480  INFO 21848 --- [restartedMain] com.zoomride.EliteTourApplication        : Starting EliteTourApplication on DESKTOP-DSQIJMP with PID 21848 (C:\Users\Tony\Desktop\Bohan\elite-tour\target\classes started by Tony in C:\Users\Tony\Desktop\Bohan\elite-tour)
+2020-09-23 14:33:20.484  INFO 21848 --- [restartedMain] com.zoomride.EliteTourApplication        : No active profile set, falling back to default profiles: default
+2020-09-23 14:33:20.537  INFO 21848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-23 14:33:20.538  INFO 21848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-23 14:33:22.245  INFO 21848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-23 14:33:22.248  INFO 21848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-23 14:33:22.315  INFO 21848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50ms. Found 0 repository interfaces.
+2020-09-23 14:33:22.709  INFO 21848 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$335aecaa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-23 14:33:23.265  INFO 21848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-23 14:33:23.301  INFO 21848 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-23 14:33:23.301  INFO 21848 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-09-23 14:33:23.458  INFO 21848 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-23 14:33:23.458  INFO 21848 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2920 ms
+2020-09-23 14:33:23.581  INFO 21848 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-09-23 14:33:23.936  INFO 21848 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-09-23 14:33:24.939  INFO 21848 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-23 14:33:25.110  INFO 21848 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-23 14:33:25.159  INFO 21848 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-23 14:33:25.607  INFO 21848 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-23 14:33:25.625  INFO 21848 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-23 14:33:25.667  INFO 21848 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-23 14:33:25.876  INFO 21848 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
+2020-09-23 14:33:25.877  INFO 21848 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryByResIdUsingGET_1
+2020-09-23 14:33:25.893  INFO 21848 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryAllUsingGET_1
+2020-09-23 14:33:25.895  INFO 21848 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryAllActiveUsingGET_1
+2020-09-23 14:33:25.896  INFO 21848 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryByIdUsingGET_1
+2020-09-23 14:33:26.001  INFO 21848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-23 14:33:26.004  INFO 21848 --- [restartedMain] com.zoomride.EliteTourApplication        : Started EliteTourApplication in 6.083 seconds (JVM running for 7.168)
+2020-09-23 14:34:35.173  INFO 21848 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-23 14:34:35.174  INFO 21848 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-23 14:34:35.183  INFO 21848 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-09-23 14:35:00.842  WARN 21848 --- [http-nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [BusinessException(code=400001, defaultMessage=username don't exist)]
+2020-09-23 14:35:52.476  INFO 40004 --- [restartedMain] com.zoomride.EliteTourApplication        : Starting EliteTourApplication on DESKTOP-DSQIJMP with PID 40004 (C:\Users\Tony\Desktop\Bohan\elite-tour\target\classes started by Tony in C:\Users\Tony\Desktop\Bohan\elite-tour)
+2020-09-23 14:35:52.480  INFO 40004 --- [restartedMain] com.zoomride.EliteTourApplication        : No active profile set, falling back to default profiles: default
+2020-09-23 14:35:52.533  INFO 40004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-23 14:35:52.533  INFO 40004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-23 14:35:53.880  INFO 40004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-23 14:35:53.882  INFO 40004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-23 14:35:53.943  INFO 40004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47ms. Found 0 repository interfaces.
+2020-09-23 14:35:54.314  INFO 40004 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8e076780] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-23 14:35:54.787  INFO 40004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-09-23 14:35:54.811  INFO 40004 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-23 14:35:54.812  INFO 40004 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-09-23 14:35:54.961  INFO 40004 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-23 14:35:54.961  INFO 40004 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2428 ms
+2020-09-23 14:35:55.076  INFO 40004 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-09-23 14:35:55.420  INFO 40004 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-09-23 14:35:56.381  INFO 40004 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-09-23 14:35:56.619  INFO 40004 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-23 14:35:56.662  INFO 40004 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-23 14:35:57.039  INFO 40004 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-09-23 14:35:57.058  INFO 40004 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-09-23 14:35:57.112  INFO 40004 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-09-23 14:35:57.311  INFO 40004 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteByIdUsingDELETE_1
+2020-09-23 14:35:57.313  INFO 40004 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryByResIdUsingGET_1
+2020-09-23 14:35:57.329  INFO 40004 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryAllUsingGET_1
+2020-09-23 14:35:57.330  INFO 40004 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryAllActiveUsingGET_1
+2020-09-23 14:35:57.332  INFO 40004 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryByIdUsingGET_1
+2020-09-23 14:35:57.418  INFO 40004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-09-23 14:35:57.422  INFO 40004 --- [restartedMain] com.zoomride.EliteTourApplication        : Started EliteTourApplication in 5.415 seconds (JVM running for 6.374)
